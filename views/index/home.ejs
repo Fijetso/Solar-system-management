@@ -19,79 +19,165 @@
           >
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
-
-          <!-- Content Row -->
-          <div class="row">
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div
-                        class="text-xs font-weight-bold text-success text-uppercase mb-1"
-                      >
-                        Earnings (Annual)
-                      </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        18
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">
+                Current Data
+              </h6>
             </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div
-                        class="text-xs font-weight-bold text-info text-uppercase mb-1"
+            <div class="row" style="margin: 1rem">
+              <div class="col-sm-12">
+                <table
+                  class="table table-bordered dataTable"
+                  id="dataTable"
+                  width="100%"
+                  cellspacing="0"
+                  role="grid"
+                  aria-describedby="dataTable_info"
+                  style="width: 100%;"
+                >
+                  <thead>
+                    <tr role="row">
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Name: activate to sort column ascending"
+                        style="width: 161px;"
                       >
-                        Tasks
-                      </div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            18
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div
-                        class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+                        Time Get
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Position: activate to sort column ascending"
+                        style="width: 246px;"
                       >
-                        Pending Requests
-                      </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        18
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
+                        PV Vol
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Office: activate to sort column ascending"
+                        style="width: 116px;"
+                      >
+                        PV Amp
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Age: activate to sort column ascending"
+                        style="width: 51px;"
+                      >
+                        BUS
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        AC Vol
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        AC Hz
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        Tem
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        Pac
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        E Today
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        E All
+                      </th>
+                      <th
+                        class="sorting_asc"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Salary: activate to sort column descending"
+                        aria-sort="ascending"
+                        style="width: 97px;"
+                      >
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd">
+                      <td class="">2013/02/01</td>
+                      <td>414</td>
+                      <td>100</td>
+                      <td>43</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td class="sorting_1">Ô kê</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -109,31 +195,6 @@
                   <h6 class="m-0 font-weight-bold text-primary">
                     Earnings Overview
                   </h6>
-                  <div class="dropdown no-arrow">
-                    <a
-                      class="dropdown-toggle"
-                      href="#"
-                      role="button"
-                      id="dropdownMenuLink"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      <i
-                        class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"
-                      ></i>
-                    </a>
-                    <div
-                      class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                      aria-labelledby="dropdownMenuLink"
-                    >
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">

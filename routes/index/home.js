@@ -6,4 +6,8 @@ router.get("/", function(req, res, next) {
   res.render("index/home.ejs");
 });
 
+router.get("/login", function(req, res, next) {
+  res.render("user/login.ejs");
+});
+
 module.exports = router;
