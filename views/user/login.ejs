@@ -1,4 +1,13 @@
 <%include ../partials/header.ejs%>
+<head>
+    <script src="jquery/jquery-3.3.1.js"></script>
+  <script src="../socket.io/socket.io.js"></script>
+  <script>
+    ///Call server
+    var socket = io("http://localhost:3000/login");
+  </script>
+
+</head>
 <body class="bg-gradient-primary">
 
   <div class="container">
@@ -32,7 +41,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="/" class="btn btn-primary btn-user btn-block">
+                    <a href="/" class="btn btn-primary btn-user btn-block" id="request-login">
                       Login
                     </a>
                     <hr>
