@@ -19,19 +19,31 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 /// passport setup
-app.use(session({ secret: keys.passportKey }));
+app.use(
+  session({ secret: keys.passportKey, cookie: { maxAge: 1000 * 60 * 1 } })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
 /* GET home page. */
 app.get("/", function(req, res, next) {
-  res.render("index/home");
+  if (req.isAuthenticated()) {
+    res.render("index/home");
+  } else {
+    res.redirect("/login");
+    // console.log(document.getElementById("login-alert").value);
+  }
 });
 
 app
   .route("/login")
   .get(function(req, res, next) {
-    res.render("user/login");
+    // console.log(req.flash("message"));
+    if (req.isAuthenticated()) {
+      res.redirect("/");
+    } else {
+      res.render("user/login", { alert: req.session.message || [] });
+    }
   })
   .post(
     passport.authenticate("local", {
@@ -51,17 +63,34 @@ passport.use(
         const userRecord = db.find(account => account.usr == username);
         if (userRecord && userRecord.pwd == password) {
           return done(null, userRecord);
+        } else {
+          return done(null, false, {
+            message: "Incorrect username or password."
+          });
         }
-      } else {
-        return done(null, false, {
-          message: "Incorrect username or password."
-        });
       }
     });
   })
 );
 passport.serializeUser((user, done) => {
   done(null, user.usr);
+});
+passport.deserializeUser(function(usrname, done) {
+  fs.readFile("database/user.json", (err, data) => {
+    if (err) {
+      return done(err);
+    }
+    var db = null;
+    if (typeof data !== "undefined" && data !== "undefined") {
+      db = JSON.parse(data);
+      const userRecord = db.find(account => (account.usr = usrname));
+      if (userRecord) {
+        return done(null, userRecord);
+      } else {
+        return done(null, false);
+      }
+    }
+  });
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,6 +100,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.log(err);
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 

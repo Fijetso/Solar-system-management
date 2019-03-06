@@ -19,22 +19,19 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome to Solar Idea!</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" action="/login" method="post">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="text" class="form-control form-control-user" name="username" required placeholder="Username">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name ="password" placeholder="Password" >
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div>
-                    <a href="/" class="btn btn-primary btn-user btn-block">
+                    <div style="height:20px"></div>
+                    
+                    <%include ../partials/alert %>
+                    <button class="btn btn-primary btn-user btn-block" id="request-login" type="submit">
                       Login
-                    </a>
+                    </button>
                     <hr>
                   </form>
                   <hr>
