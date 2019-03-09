@@ -1,3 +1,5 @@
 module.exports = {
-  passportKey: "mysecret"
+  authenLifeTime: 5, /// minute
+  passportKey: "mysecret",
+  JWTKey: "laughoutloud"
 };

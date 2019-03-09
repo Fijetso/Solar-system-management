@@ -3,10 +3,13 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 const session = require("express-session");
 var passport = require("passport");
+var bodyParser = require("body-parser");
 var LocalStrategy = require("passport-local").Strategy;
 var fs = require("fs");
-var keys = require("./config/keys");
+var config = require("./config/keys");
 var app = express();
+var morgan = require("morgan");
+var jwt = require("jsonwebtoken");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -20,18 +23,28 @@ app.use(express.static(path.join(__dirname, "public")));
 
 /// passport setup
 app.use(
-  session({ secret: keys.passportKey, cookie: { maxAge: 1000 * 60 * 1 } })
+  session({ secret: config.passportKey, cookie: { maxAge: 1000 * 60 * config.authenLifeTime } })
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
+/// Body Parser setup
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+/// JWT setup
+app.set("superSecret", config.JWTKey);
+
+/// morgan setup
+app.use(morgan("dev"));
+
 /* GET home page. */
 app.get("/", function(req, res, next) {
+  // res.json({ sucess: true });
   if (req.isAuthenticated()) {
     res.render("index/home");
   } else {
     res.redirect("/login");
-    // console.log(document.getElementById("login-alert").value);
   }
 });
 
