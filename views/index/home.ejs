@@ -1,0 +1,224 @@
+<%include ../partials/header%>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <%include ../partials/sidebar%>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%include ../partials/navbar%>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+          >
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+          </div>
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">
+                Current Data
+              </h6>
+            </div>
+            <div class="row" style="margin: 1rem">
+              <div class="col-sm-12">
+                <table
+                  class="table table-bordered dataTable"
+                  id="dataTable"
+                  width="100%"
+                  cellspacing="0"
+                  role="grid"
+                  aria-describedby="dataTable_info"
+                  style="width: 100%;"
+                >
+                  <thead>
+                    <tr role="row">
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Name: activate to sort column ascending"
+                        style="width: 161px;"
+                      >
+                        Time Get
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Position: activate to sort column ascending"
+                        style="width: 246px;"
+                      >
+                        PV Vol
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Office: activate to sort column ascending"
+                        style="width: 116px;"
+                      >
+                        PV Amp
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Age: activate to sort column ascending"
+                        style="width: 51px;"
+                      >
+                        BUS
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        AC Vol
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        AC Hz
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        Tem
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        Pac
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        E Today
+                      </th>
+                      <th
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Start date: activate to sort column ascending"
+                        style="width: 107px;"
+                      >
+                        E All
+                      </th>
+                      <th
+                        class="sorting_asc"
+                        tabindex="0"
+                        aria-controls="dataTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Salary: activate to sort column descending"
+                        aria-sort="ascending"
+                        style="width: 97px;"
+                      >
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd">
+                      <td class="">2013/02/01</td>
+                      <td>414</td>
+                      <td>100</td>
+                      <td>43</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td>201</td>
+                      <td class="sorting_1">Ô kê</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+            <!-- Area Chart -->
+            <div class="col-xl-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <h6 class="m-0 font-weight-bold text-primary">
+                    Earnings Overview
+                  </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+                <div class="mt-4 text-center small">
+                  <span class="mr-2">
+                    <i class="fas fa-circle text-primary"></i> Direct
+                  </span>
+                  <span class="mr-2">
+                    <i class="fas fa-circle text-success"></i> Social
+                  </span>
+                  <span class="mr-2">
+                    <i class="fas fa-circle text-info"></i> Referral
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%include ../partials/footer.ejs%>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
